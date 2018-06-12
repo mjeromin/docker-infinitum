@@ -1,3 +1,7 @@
-FROM mjeromin/docker-infinitum
+FROM centos 
+
+LABEL maintainer="mark.jeromin@sysfrog.net"
+
+RUN yum install -y docker 
 
 CMD ["/usr/bin/docker", "container", "run", "--rm", "-v", "/var/run/docker.sock:/var/run/docker.sock", "mjeromin/docker-infinitum"]
